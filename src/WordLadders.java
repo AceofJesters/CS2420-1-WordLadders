@@ -1,7 +1,7 @@
 public class WordLadders {
     public static void main(String[] args) {
 
-        LadderGame g = new LadderGame("dictionary.txt");
+        LadderGame g = new LadderGame("1-WordLadders/dictionary.txt");
 
         System.out.println("--- First 10 words of length 6 ---");
         g.listWords(6, 10);

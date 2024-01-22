@@ -10,7 +10,7 @@ public class LadderGame {
     }
 
     public void play(String start, String end) {
-        // TODO: Write some good stuff here
+
     }
 
     public ArrayList<String> oneAway(String word, boolean withRemoval) {
