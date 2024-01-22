@@ -20,7 +20,8 @@ public class LadderGame {
             for (String wordTwo : this.dictionary.get(word.length())) {
                 int wordDifference = diff(word, wordTwo);
 
-                if (wordDifference == word.length() - 1) {
+                if (wordDifference == 0) {
+                    System.out.println(word);
                     words.add(wordTwo);
                 }
             }
