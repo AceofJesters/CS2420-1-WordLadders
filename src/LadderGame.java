@@ -31,15 +31,7 @@ public class LadderGame {
     }
 
     private int diff(String word, String wordTwo) {
-        int len1 = word.length();
-        int len2 = wordTwo.length();
-        int diff = len1 - len2;
-        int diff2 = len2 - len1;
-        if(diff > diff2) {
-            return diff;
-        } else {
-            return diff2;
-        }
+        return Math.max(word.length(), wordTwo.length());
     }
 
     public void listWords(int length, int howMany) {
