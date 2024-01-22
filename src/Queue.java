@@ -20,14 +20,15 @@ public class Queue<E> {
     }
 
     public E dequeue(){
-        LadderNode node = listHead.next;
+        LadderNode<E> node = listHead.next;
+        E tempNodeValue = listHead.nodeValue;
         if (listHead.next == null) {
             listTail = listHead;
         } else {
-            listHead.next = LadderNode.next;
+            listHead.next = node.next;
         }
         LadderSize--;
-        return (E) LadderNode.nodeValue;
+        return tempNodeValue;
     }
 
     public boolean isEmpty(){
