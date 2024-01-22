@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class LadderGame {
+    ArrayList<ArrayList<String>> dictionary = new ArrayList<>();
 
     public LadderGame(String dictionaryFile) {
         readDictionary(dictionaryFile);
@@ -27,6 +28,18 @@ public class LadderGame {
         }
 
         return words;
+    }
+
+    private int diff(String word, String wordTwo) {
+        int len1 = word.length();
+        int len2 = wordTwo.length();
+        int diff = len1 - len2;
+        int diff2 = len2 - len1;
+        if(diff > diff2) {
+            return diff;
+        } else {
+            return diff2;
+        }
     }
 
     public void listWords(int length, int howMany) {

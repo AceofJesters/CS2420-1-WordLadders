@@ -4,18 +4,30 @@ public class Queue<E> {
     private int LadderSize;
 
     public void enqueue(E value){
+        LadderNode<E> node = new LadderNode<>(value);
+        LadderNode<E> current = listHead.next;
+        LadderNode<E> previous = listHead;
 
+        while (current != null) {
+            previous = current;
+            current = current.next;
+        }
+
+        previous.next = node;
+        node.next = null;
+        listTail = node;
+        LadderSize++;
     }
 
     public E dequeue(){
-        LadderNode<E> node = listHead.next;
+        LadderNode node = listHead.next;
         if (listHead.next == null) {
             listTail = listHead;
         } else {
             listHead.next = LadderNode.next;
         }
         LadderSize--;
-        return LadderNode.nodeValue;
+        return (E) LadderNode.nodeValue;
     }
 
     public boolean isEmpty(){
